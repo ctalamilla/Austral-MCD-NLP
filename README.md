@@ -163,6 +163,20 @@ Trabajo final de la materia **Text Mining**, Universidad Austral.
 
 Se evaluó el rendimiento del modelo sobre una muestra aleatoria de 68 documentos del Boletín Oficial, los cuales fueron etiquetados manualmente. Para garantizar una evaluación justa, se eliminaron del análisis aquellas **etiquetas verdaderas que el modelo nunca predijo**, ya que no formaban parte de las categorías previstas.
 
+Para validar el rendimiento del modelo de clasificación automática sin etiquetar manualmente los 15.000 documentos, aplicamos estadística inferencial para determinar un tamaño de muestra representativo.
+
+Parámetros definidos: 
+
+- Tamaño de población (N): 15.000 documentos
+
+- Nivel de confianza: 90%
+
+- Margen de error permitido: ±10%
+
+- Proporción esperada (p): 0.5 (caso conservador)
+
+<img src="img/image11.png" alt="boletines" width="600"/>
+
 ### ❌ Etiquetas verdaderas no evaluables (no disponibles en el modelo)
 
 ```
