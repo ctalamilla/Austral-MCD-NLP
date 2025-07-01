@@ -127,11 +127,12 @@ Estas categorías permiten una clasificación temática detallada y útil para t
 
 ## 📜 Ejemplo de Uso
 ```python
-pregunta = "¿Qué documentos mencionan adjudicaciones?"
+pregunta = "¿Qué documentos mencionan edictos?"
 resultados, indices = buscar_respuesta(pregunta)
 ```
 Esto devuelve los documentos que, semánticamente, se relacionan con adjudicaciones, aunque no contengan la palabra literal.
 
+<img src="img/image10.png" alt="boletines" width="600"/>
 ---
 
 ## 🚀 Resultados
@@ -143,7 +144,8 @@ Esto devuelve los documentos que, semánticamente, se relacionan con adjudicacio
 ---
 
 ## 📄 Autor
-Trabajo final de la materia **Procesamiento de Lenguaje Natural**, Universidad Austral.
+Trabajo final de la materia **Text Mining**, Universidad Austral.
+
 **Alberto Tejerina**
 **Cristian Salinas**
 
