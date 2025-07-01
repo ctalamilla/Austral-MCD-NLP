@@ -76,7 +76,7 @@ Se implementa una clase `DocumentClassifierOptimized` que permite:
 Este enfoque resulta fundamental cuando se trabaja con más de 15.000 documentos y se requiere procesamiento en GPU con eficiencia.
 
 Finalmente se logra la prediccion del score de las etiquetas candidatas y se selecciona la etiqueta con mejor score.
-<img src="img/image4.png" alt="boletines" width="600"/>
+<img src="img/image4.png" alt="boletines" width="300"/>
 <img src="img/image5.png" alt="boletines" width="600"/>
 ### 4. Búsqueda Semántica por Pregunta
 Se integra un sistema de recuperación de información basado en embeddings semánticos:
