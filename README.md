@@ -1,7 +1,11 @@
 # README - Clasificación Automática de Documentos del Boletín Oficial
 
 ## 🗂️ Descripción General
-Este proyecto aborda un desafío de Procesamiento de Lenguaje Natural (NLP) aplicado a documentos administrativos del Estado. Su objetivo es automatizar la clasificación temática de documentos publicados en boletines oficiales, permitiendo una búsqueda más eficiente y una comprensión semántica de grandes volúmenes de texto. Para lograrlo, se integran técnicas modernas de NLP con arquitecturas preentrenadas, embebido semántico y modelos de inferencia `zero-shot`.
+Este proyecto aborda un desafío de Procesamiento de Lenguaje Natural (NLP) aplicado a documentos administrativos del Estado. Su objetivo es automatizar la clasificación temática de documentos publicados en boletines oficiales, permitiendo una búsqueda más eficiente y una comprensión semántica de grandes volúmenes de texto. 
+
+<img src="image.png" alt="boletines" width="600"/>
+
+Para lograrlo, se integran técnicas modernas de NLP con arquitecturas preentrenadas, embebido semántico y modelos de inferencia `zero-shot`.
 
 El pipeline completo abarca desde la descarga de boletines oficiales hasta su clasificación automática y posterior búsqueda semántica a través de preguntas en lenguaje natural.
 
