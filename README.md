@@ -28,7 +28,7 @@ project_root/
 
 ## 🔁 Diagrama de Flujo del Proceso
 
-```mermaid
+```
 graph TD
     A[Inicio] --> B[Descarga de PDF desde Drive]
     B --> C[Extracción de documentos con expresiones regulares]
@@ -49,7 +49,14 @@ graph TD
 ### 1. Preprocesamiento de Documentos
 Se descargan PDFs desde un enlace de Google Drive, se extrae su texto ignorando las primeras páginas (índices) y se segmenta cada boletín en documentos individuales. La segmentación se realiza utilizando expresiones regulares que detectan patrones como `OP Nº: XXXXXXX`, característicos de los boletines oficiales.
 
+<img src="img/image3.png" alt="boletines" width="600"/>
+
+<img src="img/image6.png" alt="boletines" width="600"/>
+
+
 Posteriormente se eliminan encabezados y pies de página que interfieren en el análisis semántico.
+
+<img src="img/image7.png" alt="boletines" width="600"/>
 
 ### 2. Modelos de Clasificación Zero-Shot
 Utilizamos el modelo `facebook/bart-large-mnli`, entrenado en tareas de inferencia textual (NLI), que permite aplicar una técnica denominada **zero-shot learning**. En lugar de requerir datos etiquetados para entrenamiento, el modelo puede inferir a qué categoría pertenece un texto usando hipótesis semánticas del tipo:
@@ -57,6 +64,8 @@ Utilizamos el modelo `facebook/bart-large-mnli`, entrenado en tareas de inferenc
 > "Este documento trata sobre licitaciones públicas."
 
 Se compara la probabilidad de esta hipótesis para múltiples etiquetas candidatas.
+
+<img src="img/image2.png" alt="boletines" width="600"/>
 
 ### 3. Clasificador Optimizado
 Se implementa una clase `DocumentClassifierOptimized` que permite:
@@ -66,6 +75,9 @@ Se implementa una clase `DocumentClassifierOptimized` que permite:
 
 Este enfoque resulta fundamental cuando se trabaja con más de 15.000 documentos y se requiere procesamiento en GPU con eficiencia.
 
+Finalmente se logra la prediccion del score de las etiquetas candidatas y se selecciona la etiqueta con mejor score.
+<img src="img/image4.png" alt="boletines" width="600"/>
+<img src="img/image5.png" alt="boletines" width="600"/>
 ### 4. Búsqueda Semántica por Pregunta
 Se integra un sistema de recuperación de información basado en embeddings semánticos:
 - Se usa `SentenceTransformer` para representar cada documento como un vector en un espacio semántico.
@@ -132,7 +144,7 @@ Esto devuelve los documentos que, semánticamente, se relacionan con adjudicacio
 
 ## 📄 Autor
 Trabajo final de la materia **Procesamiento de Lenguaje Natural**, Universidad Austral.
-
+**Alberto Tejerina**
 **Cristian Salinas**
 
 ---
@@ -142,11 +154,6 @@ Trabajo final de la materia **Procesamiento de Lenguaje Natural**, Universidad A
 - Incorporación de OCR para textos escaneados (no seleccionables).
 - Interfaz web de usuario para exploración interactiva.
 - Exportación de resultados a bases de datos relacionales o APIs REST.
-
----
-
-## 🔐 Licencia
-MIT License.
 
 ---
 
@@ -181,6 +188,7 @@ Luego del filtrado, el modelo alcanzó una **accuracy global de 96.1%**, con los
 from sklearn.metrics import classification_report
 print(classification_report(y_true, y_pred))
 ```
+<img src="img/image8.png" alt="boletines" width="600"/>
 
 > 📌 Podés consultar el DataFrame `df_reporte` para ver la tabla completa en el notebook.
 
@@ -194,7 +202,7 @@ La siguiente matriz permite visualizar los aciertos (diagonal) y los errores de 
 from sklearn.metrics import confusion_matrix
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
 ```
-
+<img src="img/image9.png" alt="boletines" width="600"/>
 ---
 
 ### 📌 Conclusión
