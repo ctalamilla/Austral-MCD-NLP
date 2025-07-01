@@ -3,7 +3,7 @@
 ## 🗂️ Descripción General
 Este proyecto aborda un desafío de Procesamiento de Lenguaje Natural (NLP) aplicado a documentos administrativos del Estado. Su objetivo es automatizar la clasificación temática de documentos publicados en boletines oficiales, permitiendo una búsqueda más eficiente y una comprensión semántica de grandes volúmenes de texto. 
 
-<img src="image.png" alt="boletines" width="600"/>
+<img src="img/image.png" alt="boletines" width="600"/>
 
 Para lograrlo, se integran técnicas modernas de NLP con arquitecturas preentrenadas, embebido semántico y modelos de inferencia `zero-shot`.
 
